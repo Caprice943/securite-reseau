@@ -1,0 +1,43 @@
+body {
+  background-image: url(../public/hospital.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-size: larger;
+}
+
+.content {
+  background-color: lightskyblue;
+  opacity: 0.9;
+  border: 2px dotted burlywood;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  padding-right: 40px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 200px;
+}
+
+.div {
+  align-content: center;
+  justify-content: center;
+}
+
+.content .input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content .button {
+  opacity: 1;
+  width: 150px;
+}
