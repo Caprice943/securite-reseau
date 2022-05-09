@@ -7,6 +7,7 @@ require("./config/db");
 require("dotenv").config({ path: "./config/.env" });
 
 app.use(express.json());
+//app.use(cors);
 
 // Routes
 app.use("/api/user", userRoutes);

@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { findDOMNode } = require("react-dom");
 
 const userSchema = new mongoose.Schema(
   {
