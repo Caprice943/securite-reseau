@@ -24,7 +24,7 @@ const Connexion = () => {
 
     if (email === email && password === password) {
       console.log("Yesssss");
-      navigate("/connecte");
+      navigate("/secondauth");
     }
 
     setEmail("");
