@@ -9,7 +9,7 @@ const Connexion = () => {
 
   let navigate = useNavigate();
 
-  const verificationId = (e) => {
+  const verificationId = async (e) => {
     e.preventDefault();
     console.log("je suis dans la verif");
 
@@ -18,17 +18,41 @@ const Connexion = () => {
       password: password,
     };
 
-    axios
+    console.log(registered);
+
+    await axios({
+      method: "post",
+      url: `http://localhost:4001/api/user/login`,
+      withCredentials: true,
+      data: {
+        email: registered.email,
+        password: registered.password,
+      },
+    })
+      .then((res) => {
+        console.log(registered.email);
+        if (res.data.errors) {
+          console.log(res.data.errors);
+        } else {
+          console.log(res);
+        }
+
+        navigate("/secondauth");
+      })
+      .catch((err) => {
+        console.log(registered.email);
+        console.log(err.response);
+      });
+    /*
+    await axios
       .post("http://localhost:4001/api/user/login", registered)
       .then((response) => console.log(response.data));
 
-    if (email === email && password === password) {
-      console.log("Yesssss");
-      navigate("/secondauth");
-    }
+    
 
     setEmail("");
     setPassword("");
+    */
   };
 
   return (
